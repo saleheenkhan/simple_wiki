@@ -1,0 +1,73 @@
+@import "custom-variables";
+/* General Css override */
+body{
+  margin-top: 50px!important;
+  padding-top: 2rem;
+}
+
+h6{
+  text-transform: uppercase;
+}
+
+pre{
+  background-color: $gray;
+  margin-bottom: 25px!important;
+  padding: 1em!important;
+  border-radius: 4px;
+}
+
+#sign_in{
+  .sign_in_btn{
+    width: 100%;
+  }
+
+}
+/* Sidebar */
+#sidebar{
+    position: fixed;
+    top: 65px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    overflow-x: hidden;
+    overflow-y: auto;
+    border-right: 1px solid $gray-lighter;
+    background-color: rgba($gray-lighter,.2);
+	.sidebar-menu {
+		> li > a {
+          font-size: .875em;
+          color: $gray-light!important;
+
+		}
+	}
+}
+
+//SimpleMDE css conlict fix
+
+.CodeMirror pre{
+  margin-bottom: 0em !important;
+  padding: 0em!important;
+}
+
+/* responsive */
+// Small devices (landscape phones, 576px and up)
+@media screen and (max-width: 768px) {
+  #sidebar{
+    position: relative;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+
+}
