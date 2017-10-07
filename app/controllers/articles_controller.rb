@@ -40,6 +40,8 @@ class ArticlesController < ApplicationController
     redirect_to articles_path, notice: "Article #{@article.name} has been deleted"
   end
 
+
+
   private
 
   def article_params
