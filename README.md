@@ -2,10 +2,10 @@
 
 * Install Homebrew
 * Install Rbenv
-* Install Ruby 2.4.1 `rbenv install 2.4.1`
+* Install Ruby 2.4.2 `rbenv install 2.4.2`
 * Clone the repo
 * `cd` to the repo directory
-* Set the local ruby version `rbenv local 2.4.1`
+* Set the local ruby version `rbenv local 2.4.2`
 * Bundle install
 * `brew install postgresql`
 * create a database that matches the database.yml
