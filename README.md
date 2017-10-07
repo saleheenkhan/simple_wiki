@@ -11,5 +11,5 @@
 * create a database that matches the database.yml
 * crete a user in postgresql and give it rights to the dev database
 * Once complete run `./start.sh`
-* To create an initial user run `rails c`
-* `User.create(email: "Youremail", password: "your_password", password_confirmation: "your_password", full_name: "Full Name", role: "admin")`
+* To create an initial user run `rails db:seed`
+* To manually create a user run `rails c` then `User.create(email: "Youremail", password: "your_password", password_confirmation: "your_password", full_name: "Full Name", role: "admin")`
