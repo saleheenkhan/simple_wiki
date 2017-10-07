@@ -16,5 +16,5 @@ config/database.yml
 config/secrets.yml
 /node_modules
 /yarn-error.log
-
+.DS_Store
 .byebug_history
