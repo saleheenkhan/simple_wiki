@@ -19,8 +19,8 @@ pre{
 #sign_in{
   .sign_in_btn{
     width: 100%;
-  }
-
+  } 
+  
 }
 /* Sidebar */
 #sidebar{
@@ -37,7 +37,7 @@ pre{
 		> li > a {
           font-size: .875em;
           color: $gray-light!important;
-
+          
 		}
 	}
 }
@@ -59,15 +59,15 @@ pre{
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
-
+  
 }
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
-
+  
 }
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
-
+  
 }

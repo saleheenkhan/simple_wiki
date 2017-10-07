@@ -40,5 +40,5 @@ $(document).ready(function() {
   function withTimeout(func) {
     setTimeout(func, 2700);
   }
-
+  
 });
