@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col">
+    <h1>Articles</h1>
+    <% @articles.each do |article| %>
+      <p><%= link_to article.name, article %></p>
+    <% end %>
+  </div>
+
+  <div class="col">
+    <h1>Categories</h1>
+    <% @categories.each do |category| %>
+      <p><%= link_to category.name, category %></p>
+    <% end %>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <h1>Tags</h1>
+    <% @tags.each do |tag| %>
+      <p><%= link_to tag.name, tag %></p>
+    <% end %>
+  </div>
+</div>

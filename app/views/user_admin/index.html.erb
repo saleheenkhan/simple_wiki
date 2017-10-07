@@ -1,0 +1,21 @@
+<%= link_to "New User", '#new-user-modal', data: {toggle: "modal", target: "#new-user-modal" }, class: 'btn btn-sm btn-success' %>
+<%= render 'new_user_modal' %>
+<table class="table table-striped">
+  <thead>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Role</th>
+    <th>Action</th>
+  </thead>
+  <tbody>
+      <% @users.each_with_index do |u, index| %>
+    <tr>
+      <td><%= u.full_name %></td>
+      <td><%= u.email %></td>
+      <td><%= u.role %></td>
+      <td><%= link_to "Modify", '#edit-user-modal', data: {toggle: "modal", target: "#edit-user-modal#{index}" }, class: 'btn btn-sm btn-danger' %> <%= link_to "Disable", disable_user_admin_path(u.id), method: 'put', class: 'btn btn-sm btn-warning' %></td>
+      <%= render 'edit_user_modal', u: u, index: index %>
+     <% end %>
+    </tr>
+  </tbody>
+</table>

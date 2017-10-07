@@ -1,0 +1,17 @@
+<% if user_signed_in? %>
+<nav id="sidebar" class="col-sm-3 col-md-2 bg-faded sidebar p-4 pt-6 d-md-block h-100 collapse" id="sidebar" aria-expanded="false" >
+  <ul class="sidebar-menu nav nav-pills flex-column mb-5">
+    <h6>Categories</h6>
+    <% @categories.each do |c| %>
+      <li><%= link_to c.name, category_path(c.id) %></li>
+    <% end %>
+  </ul>
+    <ul class="sidebar-menu nav nav-pills flex-column mb-5">
+    <h6>Tags</h6>
+    <% @tags.each do |t| %>
+      <li><%= link_to t.name, tag_path(t) %></li>
+    <% end %>
+  </ul>
+
+</nav>
+<% end %>

@@ -1,0 +1,19 @@
+<div id="delete-modal" class="modal hide fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Delete Article</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Are you sure you want to delete <span class="text-warning"><%= a.name %></span>?
+      </div>
+      <div class="modal-footer">
+        <%= link_to "Delete", article_path(@article), method: 'delete', class: 'd-inline btn btn-danger btn-sm' if admin? || editor? %>
+        <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>

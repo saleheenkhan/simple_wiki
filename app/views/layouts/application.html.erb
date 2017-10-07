@@ -1,14 +1,30 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>SimpleWiki</title>
+    <title>Simple Wikie</title>
     <%= csrf_meta_tags %>
+    <%= favicon_link_tag 'favicon.ico' %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://use.typekit.net/thw2gfb.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
   </head>
 
   <body>
-    <%= yield %>
-  </body>
+
+    <%= render partial: "shared/navbar" %>
+    <div class="container-fluid h-100">
+      <div class="row h-100">
+        <% if user_signed_in? %>
+          <%= render partial: "shared/sidebar" %>
+        <% end %>
+        <div class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
+          <a href="" data-target="#sidebar" data-toggle="collapse" class="d-md-none"><i class="fa fa-bars"></i></a>
+          <%= flash_messages %>
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+    </body>
 </html>
