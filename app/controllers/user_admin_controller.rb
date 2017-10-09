@@ -1,6 +1,6 @@
 class UserAdminController < ApplicationController
   before_action :set_user, only: [:edit, :update, :enable, :disable]
-  before_action :set_categories
+  before_action :set_categories, :set_tags
   before_action :disallow_user
   before_action :disallow_editor
 
@@ -55,5 +55,9 @@ private
 
   def set_categories
     @categories = Category.order('name asc')
+  end
+
+  def set_tags
+    @tags = Tag.order('name asc')
   end
 end
