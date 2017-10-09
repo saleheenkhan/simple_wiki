@@ -46,8 +46,10 @@ gem 'friendly_id', '~> 5.1.0'
 gem 'selectize-rails', '~> 0.12.4'
 # Search
 gem 'ransack', '~> 1.8', '>= 1.8.2'
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+gem 'capistrano', '~> 3.7', '>= 3.7.1'
+gem 'capistrano-rails', '~> 1.2'
+gem 'capistrano-passenger', '~> 0.2.0'
+gem 'capistrano-rbenv', '~> 2.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
