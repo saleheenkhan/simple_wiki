@@ -16,9 +16,7 @@
     <%= render partial: "shared/navbar" %>
     <div class="container-fluid h-100">
       <div class="row h-100">
-        <% if user_signed_in? %>
           <%= render partial: "shared/sidebar" %>
-        <% end %>
         <div class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
           <a href="" data-target="#sidebar" data-toggle="collapse" class="d-md-none"><i class="fa fa-bars"></i></a>
           <%= flash_messages %>
