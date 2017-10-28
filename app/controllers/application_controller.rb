@@ -2,7 +2,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :authenticate_user!
-
+  before_action :set_tags
+  before_action :set_categories
 
   def admin?
     user_signed_in? && current_user.role == "Admin"
@@ -49,6 +50,13 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def set_categories
+    @categories = Category.order('name asc')
+  end
+
+  def set_tags
+    @tags = Tag.order('name asc')
+  end
 
 protected
 
