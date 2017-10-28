@@ -21,6 +21,8 @@ class Article < ApplicationRecord
   validates :category_ids, presence: true
   friendly_id :name, use: :slugged
 
+  scope :unprotected, -> {where(protected: false)}
+  
   def should_generate_new_friendly_id?
     name_changed?
   end
