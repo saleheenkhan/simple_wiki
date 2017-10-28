@@ -2,7 +2,7 @@
   <h1 class="float-left"><%= @article.name %></h1>
   <div class="float-right">
   <%= link_to ' <i class="fa fa-pencil" aria-hidden="true"></i>'.html_safe, edit_article_path(@article), class: 'd-inline btn btn-info btn-sm' if admin? || editor? %>
-  <%= link_to ' <i class="fa fa-trash" aria-hidden="true"></i>'.html_safe, '#delete-modal', data: {toggle: "modal", target: "#delete-modal" }, class: 'd-inline btn btn-danger btn-sm' %>
+  <%= link_to ' <i class="fa fa-trash" aria-hidden="true"></i>'.html_safe, '#delete-modal', data: {toggle: "modal", target: "#delete-modal" }, class: 'd-inline btn btn-danger btn-sm' if admin? || editor? %>
   <%= render 'shared/delete_modal', a: @article %>
   </div>
 </div>
