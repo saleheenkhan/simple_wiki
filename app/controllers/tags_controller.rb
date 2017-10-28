@@ -2,6 +2,7 @@ class TagsController < ApplicationController
   before_action :set_categories, only: [:index, :show]
   before_action :set_tags, only: [:index, :show]
   before_action :disallow_user, only: [:create]
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
     @tags = Tag.order("name asc")

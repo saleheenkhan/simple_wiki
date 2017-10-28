@@ -1,7 +1,8 @@
 class MainController < ApplicationController
   before_action :set_categories, only: [:index, :search]
   before_action :set_tags, only: [:index, :search]
-
+  skip_before_action :authenticate_user!, only: [:index, :show]
+  
   def search
     @articles = Article.ransack(name_or_body_cont: params[:q]).result(distinct: true)
     @categories = Category.ransack(name_cont: params[:q]).result(distinct: true)

@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
   before_action :set_tags, only: [:index, :new, :edit, :show]
   before_action :set_article, only: [:edit, :update, :show, :destroy]
   before_action :disallow_user, only: [:new, :create, :edit, :update, :destroy]
-
+  skip_before_action :authenticate_user!, only: [:index, :show]
   def index
     @articles = Article.order("name asc")
   end
