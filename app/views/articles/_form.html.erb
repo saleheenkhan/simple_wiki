@@ -33,6 +33,11 @@
   </div>
 
   <div class="form-group">
+    <%= f.check_box :protected, class: 'form-control' %>
+    <%= f.label :protected, "Protected" %>
+  </div>
+  
+  <div class="form-group">
     <%= f.submit class: "btn btn-primary" %>
   </div>
 <% end %>
