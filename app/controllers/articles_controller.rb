@@ -5,7 +5,11 @@ class ArticlesController < ApplicationController
   before_action :disallow_user, only: [:new, :create, :edit, :update, :destroy]
   skip_before_action :authenticate_user!, only: [:index, :show]
   def index
-    @articles = Article.order("name asc")
+    if user_signed_in?
+      @articles = Article.order("name asc")
+    else
+      @articles = Article.unprotected.order("name asc")
+    end
   end
 
   def new
