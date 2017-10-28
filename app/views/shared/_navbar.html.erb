@@ -4,7 +4,6 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <% if user_signed_in? %>
     <div class="collapse navbar-collapse" id="navbarsDefault">
       <ul class="navbar-nav ml-sm-6 pl-sm-6">
       <%= form_with url: search_path, local: true, method: :get, html: { class: "form-inline my-2 my-lg-0" } do |form| %>
@@ -13,15 +12,16 @@
       </ul>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.full_name %></a>
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><%= user_signed_in? ? current_user.full_name : "Guest User" %></a>
           <div class="dropdown-menu dropdown-menu-right">
-            <%= link_to "New Article", new_article_path, class: 'dropdown-item' if editor? || admin?%>
+            <%= link_to "New Article", new_article_path, class: 'dropdown-item' %>
             <div class="dropdown-divider"></div>
-            <%= link_to "User Admin", user_admin_index_path, class: 'dropdown-item' if admin?%>
-            <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+            <%= link_to "User Admin", user_admin_index_path, class: 'dropdown-item' if admin? %>
+            <%= link_to "Account settings", edit_user_registration_path, class: "dropdown-item" if user_signed_in? %>
+            <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "dropdown-item" if user_signed_in? %>
+            <%= link_to "Login", new_user_session_path, class: "dropdown-item" unless user_signed_in? %>
           </div>
         </li>
       </ul>
     </div>
-  <% end %>
 </nav>
