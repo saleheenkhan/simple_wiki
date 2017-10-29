@@ -46,6 +46,9 @@ gem 'friendly_id', '~> 5.1.0'
 gem 'selectize-rails', '~> 0.12.4'
 # Search
 gem 'ransack', '~> 1.8', '>= 1.8.2'
+# Notifications to slack
+gem "slack-notifier"
+# Deployment
 gem 'capistrano', '~> 3.7', '>= 3.7.1'
 gem 'capistrano-rails', '~> 1.2'
 gem 'capistrano-passenger', '~> 0.2.0'
